@@ -1,6 +1,5 @@
 import { PROVIDER_URL } from "./config";
 import { ethers } from "ethers";
-import { Address } from "cluster";
 import { Pool } from "@uniswap/v3-sdk";
 import { Token } from "@uniswap/sdk-core";
 import { abi as IUniswapV3PoolABI } from "@uniswap/v3-core/artifacts/contracts/interfaces/IUniswapV3Pool.sol/IUniswapV3Pool.json";
@@ -15,9 +14,9 @@ const poolContract = new ethers.Contract(
 );
 
 interface Immutables {
-  factory: Address;
-  token0: Address;
-  token1: Address;
+  factory: string;
+  token0: string;
+  token1: string;
   fee: number;
   tickSpacing: number;
   maxLiquidityPerTick: number;
@@ -81,9 +80,9 @@ console.log(`Retrieving ${poolAddress} pool info...`);
 async function main() {
   const [immutables, state] = await Promise.all([getPoolImmutables(), getPoolState()])
 
-  const TokenA = new Token(3, immutables.token0.toString(), 6, 'USDC', 'USD Coin')
+  const TokenA = new Token(3, immutables.token0, 6, 'USDC', 'USD Coin')
 
-  const TokenB = new Token(3, immutables.token1.toString(), 18, 'WETH', 'Wrapped Ether')
+  const TokenB = new Token(3, immutables.token1, 18, 'WETH', 'Wrapped Ether')
 
   const poolExample = new Pool(
     TokenA,
