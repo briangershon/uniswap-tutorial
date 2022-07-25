@@ -78,11 +78,14 @@ async function getPoolState() {
 console.log(`Retrieving ${poolAddress} pool info...`);
 
 async function main() {
-  const [immutables, state] = await Promise.all([getPoolImmutables(), getPoolState()])
+  const [immutables, state] = await Promise.all([
+    getPoolImmutables(),
+    getPoolState(),
+  ]);
 
-  const TokenA = new Token(3, immutables.token0, 6, 'USDC', 'USD Coin')
+  const TokenA = new Token(3, immutables.token0, 6, "USDC", "USD Coin");
 
-  const TokenB = new Token(3, immutables.token1, 18, 'WETH', 'Wrapped Ether')
+  const TokenB = new Token(3, immutables.token1, 18, "WETH", "Wrapped Ether");
 
   const poolExample = new Pool(
     TokenA,
@@ -91,8 +94,8 @@ async function main() {
     state.sqrtPriceX96.toString(),
     state.liquidity.toString(),
     state.tick
-  )
-  console.log(poolExample)
+  );
+  console.log(poolExample);
 }
 
-main()
+main();

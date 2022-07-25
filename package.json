@@ -5,10 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx ts-node src/index.ts",
-    "type": "module"
+    "start": "npx ts-node src/index.ts"
   },
-  "author": "",
+  "author": "Brian Gershon <briangershon@users.noreply.github.com>",
   "license": "MIT",
   "dependencies": {
     "@uniswap/sdk-core": "^3.0.1",
