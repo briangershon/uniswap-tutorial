@@ -1,6 +1,8 @@
-Playing with Uniswap v3 SDK Tutorial
+Playing with Uniswap v3 SDK Tutorials:
 
-https://docs.uniswap.org/sdk/guides/using-ethers
+- [Quick Start](https://docs.uniswap.org/sdk/guides/quick-start)
+- [Using Ethers.js](https://docs.uniswap.org/sdk/guides/using-ethers)
+- [Creating a Pool Instance](https://docs.uniswap.org/sdk/guides/creating-a-pool)
 
 ## To run
 
