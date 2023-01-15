@@ -84,7 +84,6 @@ async function main() {
   ]);
 
   const TokenA = new Token(3, immutables.token0, 6, "USDC", "USD Coin");
-
   const TokenB = new Token(3, immutables.token1, 18, "WETH", "Wrapped Ether");
 
   const poolExample = new Pool(
@@ -96,6 +95,12 @@ async function main() {
     state.tick
   );
   console.log(poolExample);
+
+  const token0Price = poolExample.token0Price;
+  const token1Price = poolExample.token1Price;
+
+  console.log(`${TokenA.symbol} spot price is ${token0Price.toSignificant(6)}`);
+  console.log(`${TokenB.symbol} spot price is ${token1Price.toSignificant(6)}`);
 }
 
 main();
